@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import Location from './components/Location';
+import Location from './components/Location/Location';
 
+document.title = 'Weather-app';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Location/>
+    <Location />
   </React.StrictMode>,
   document.getElementById('root')
 );
