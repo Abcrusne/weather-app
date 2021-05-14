@@ -80,29 +80,27 @@ function App() {
               </tr>
             </thead>
             {apiData.main ? (
-              <div>
-                <tbody>
-                  <tr>
-                    <td>
-                      <img
-                        src={`http://openweathermap.org/img/w/${apiData.weather[0].icon}.png`}
-                        alt="weather status icon"
-                        className="weather-icon"
-                      />
-                    </td>
-                    <td>{kelvinToFarenheit(apiData.main.temp)}&deg; C</td>
-                    <td>{apiData.name}</td>
-                    <td> {kelvinToFarenheit(apiData.main.temp_min)}&deg; C</td>
-                    <td> {kelvinToFarenheit(apiData.main.temp_max)}&deg; C</td>
-                    <td>{apiData.weather[0].main}</td>
-                    <td>
-                      {countries.getName(apiData.sys.country, 'en', {
-                        select: 'official',
-                      })}
-                    </td>
-                  </tr>
-                </tbody>
-              </div>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src={`http://openweathermap.org/img/w/${apiData.weather[0].icon}.png`}
+                      alt="weather status icon"
+                      className="weather-icon"
+                    />
+                  </td>
+                  <td>{kelvinToFarenheit(apiData.main.temp)}&deg; C</td>
+                  <td>{apiData.name}</td>
+                  <td> {kelvinToFarenheit(apiData.main.temp_min)}&deg; C</td>
+                  <td> {kelvinToFarenheit(apiData.main.temp_max)}&deg; C</td>
+                  <td>{apiData.weather[0].main}</td>
+                  <td>
+                    {countries.getName(apiData.sys.country, 'en', {
+                      select: 'official',
+                    })}
+                  </td>
+                </tr>
+              </tbody>
             ) : (
               <Loading />
             )}
